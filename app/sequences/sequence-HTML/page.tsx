@@ -2,25 +2,27 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { BookOpenIcon, DocumentIcon, VideoIcon, LinkIcon, ArrowLeftIcon } from '@/components/Icons'
+import { BookOpenIcon, DocumentIcon, VideoIcon, LinkIcon, ArrowLeftIcon, ImageIcon } from '@/components/Icons'
 
 interface Resource {
   title: string
-  type: 'cours' | 'exercice' | 'video' | 'lien'
+  type: 'cours' | 'exercice' | 'video' | 'lien' | 'ressource' | 'image'
   url?: string
   description?: string
 }
 
 const resources: Resource[] = [
   {
-    title: 'Cours : Introduction aux systèmes numériques',
-    type: 'cours',
-    description: 'Notions de base sur les systèmes numériques et leur fonctionnement'
+    title: 'Lien : HTML documentation',
+    type: 'lien',
+    url: 'https://www.html.com/reference/fr/',
+    description: 'Documentation HTML'
   },
   {
-    title: 'Exercices pratiques',
-    type: 'exercice',
-    description: 'Série d\'exercices pour mettre en pratique les concepts vus en cours'
+    title: 'Ressource : HTML ressource',
+    type: 'ressource',
+    url: '/files/html',
+    description: 'Ressource de cours sur HTML en .md'
   },
 ]
 
@@ -58,6 +60,10 @@ const getIcon = (type: Resource['type']) => {
       return <VideoIcon className={className} />
     case 'lien':
       return <LinkIcon className={className} />
+    case 'ressource':
+      return <DocumentIcon className={className} />
+    case 'image':
+      return <ImageIcon className={className} />
   }
 }
 
@@ -71,10 +77,14 @@ const getTypeLabel = (type: Resource['type']) => {
       return 'Vidéo'
     case 'lien':
       return 'Lien'
+    case 'ressource':
+      return 'Ressource'
+    case 'image':
+      return 'Image'
   }
 }
 
-export default function Sequence1() {
+export default function SequenceHTML() {
   return (
     <main className="min-h-screen">
       {/* Header */}
@@ -93,10 +103,10 @@ export default function Sequence1() {
             <span className="text-sm font-medium">Retour au dashboard</span>
           </Link>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight">
-            Séquence <span className="text-koenigsegg-gold">1</span>
+            Séquence <span className="text-koenigsegg-gold">HTML</span>
           </h1>
           <p className="text-koenigsegg-silver text-sm sm:text-base mt-2 font-light">
-            Introduction aux systèmes numériques
+            HTML
           </p>
         </div>
       </motion.header>
@@ -111,12 +121,10 @@ export default function Sequence1() {
         >
           <div className="bg-gradient-to-br from-koenigsegg-darkGray to-koenigsegg-gray border border-koenigsegg-lightGray/20 rounded-lg p-6 sm:p-8">
             <h2 className="text-2xl font-display font-semibold text-koenigsegg-gold mb-4">
-              À propos de cette séquence
+              À propos SEQ
             </h2>
             <p className="text-koenigsegg-silver leading-relaxed">
-              Cette première séquence vous introduit aux concepts fondamentaux des systèmes numériques.
-              Vous découvrirez les bases théoriques et pratiques nécessaires pour comprendre le fonctionnement
-              des systèmes informatiques et électroniques modernes.
+              DESCRIPTION SEQ - HTML
             </p>
           </div>
         </motion.section>
@@ -158,15 +166,25 @@ export default function Sequence1() {
                       </p>
                     )}
                     {resource.url && (
-                      <a 
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 mt-3 text-sm text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors"
-                      >
-                        <span>Accéder</span>
-                        <LinkIcon className="w-4 h-4" />
-                      </a>
+                      resource.url.startsWith('http') ? (
+                        <a 
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 mt-3 text-sm text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors"
+                        >
+                          <span>Accéder</span>
+                          <LinkIcon className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        <Link 
+                          href={resource.url}
+                          className="inline-flex items-center gap-2 mt-3 text-sm text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors"
+                        >
+                          <span>Accéder</span>
+                          <LinkIcon className="w-4 h-4" />
+                        </Link>
+                      )
                     )}
                   </div>
                 </div>
@@ -180,7 +198,7 @@ export default function Sequence1() {
             >
               <DocumentIcon className="w-12 h-12 text-koenigsegg-gold/30 mx-auto mb-3" />
               <p className="text-koenigsegg-silver text-sm font-light">
-                D'autres ressources seront ajoutées prochainement
+                autre HTML
               </p>
             </motion.div>
           </div>

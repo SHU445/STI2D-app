@@ -32,6 +32,7 @@ const usefulLinks: Link[] = [
   { title: 'ENT', url: 'https://porte-oisans.ent.auvergnerhonealpes.fr/sg.do?PROC=PAGE_ACCUEIL&ACTION=VALIDER', description: 'Espace numérique' },
   { title: 'ELEA', url: 'https://aura-38-sud.elea.apps.education.fr/local/elea_dashboard/index.php', description: 'Plateforme pédagogique' },
   { title: 'TinkerCAD', url: 'https://www.tinkercad.com/login', description: 'CAO en ligne' },
+  { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
 ]
 
 const projects: Project[] = [
@@ -54,10 +55,16 @@ const projects: Project[] = [
 
 const sequences: Sequence[] = [
   {
-    title: 'Séquence 1',
-    url: '/sequences/sequence-1',
-    description: 'Introduction aux systèmes numériques',
+    title: 'SEQ 1 - Arduino',
+    url: '/sequences/sequence-Arduino',
+    description: 'Systèmes embarqués',
     status: 'available'
+  },
+  {
+    title: 'SEQ 2 - HTML',
+    url: '/sequences/sequence-HTML',
+    description: 'HTML',
+    status: 'coming-soon'
   },
 ]
 
@@ -114,7 +121,7 @@ export default function Home() {
         >
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
             <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-koenigsegg-gold" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Liens Utiles</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Liens</h2>
           </motion.div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -155,7 +162,7 @@ export default function Home() {
         >
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
             <CodeIcon className="w-6 h-6 sm:w-7 sm:h-7 text-koenigsegg-gold" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Mes Projets</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Projets</h2>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -216,7 +223,7 @@ export default function Home() {
                     </p>
                     {sequence.status === 'available' && (
                       <div className="flex items-center gap-2 mt-3 text-koenigsegg-gold">
-                        <span className="text-xs font-medium">Disponible maintenant</span>
+                        <span className="text-xs font-medium">Disponible</span>
                       </div>
                     )}
                   </div>
@@ -237,7 +244,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
           <p className="text-koenigsegg-silver text-sm font-light">
-            Dashboard STI2D © {new Date().getFullYear()} - By SHU445 - Next.js & TypeScript
+            Dashboard STI2D - By SHU445 - Next.js & TypeScript
           </p>
         </div>
       </motion.footer>

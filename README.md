@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+Ouvrir [http://localhost:3000](http://localhost:3000)
 
 ### Build Production
 
