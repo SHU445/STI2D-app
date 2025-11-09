@@ -2,16 +2,12 @@
 
 Dashboard personnel moderne pour gérer vos ressources, projets et séquences STI2D.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- **Design Koenigsegg** : Interface sombre et élégante inspirée du luxe automobile
-- **Responsive** : Optimisé pour tous les écrans (mobile, tablette, desktop)
-- **Animations fluides** : Transitions et fade-in soignés avec Framer Motion
+- **Responsive**
 - **Liens utiles** : Accès rapide à GitHub, Vercel, Neon DB, MDN, Pronote, ENT, ELEA, TinkerCAD
-- **Projets** : Showcase de vos projets personnels
-- **Séquences** : Section évolutive pour ajouter des ressources de cours
-
-## 🚀 Démarrage
+- **Projets** : projets personnels
+- **Séquences** : Section pour ajouter des ressources de cours
 
 ### Installation
 
@@ -34,14 +30,14 @@ npm run build
 npm start
 ```
 
-## 🛠️ Technologies
+## Technologies
 
 - **Next.js 14** : Framework React avec App Router
 - **TypeScript** : Typage statique pour plus de robustesse
 - **Tailwind CSS** : Styling utility-first
 - **Framer Motion** : Animations fluides et performantes
 
-## 📦 Structure du projet
+## Structure du projet
 
 ```
 ├── app/
@@ -54,11 +50,11 @@ npm start
 └── ...config files
 ```
 
-## 🎨 Personnalisation
+## Personnalisation
 
-### Ajouter un lien utile
+### Ajouter un lien
 
-Éditez le tableau `usefulLinks` dans `app/page.tsx` :
+Éditer dans le tableau `usefulLinks` dans `app/page.tsx` :
 
 ```typescript
 const usefulLinks: Link[] = [
@@ -69,7 +65,7 @@ const usefulLinks: Link[] = [
 
 ### Ajouter un projet
 
-Éditez le tableau `projects` dans `app/page.tsx` :
+Éditer dans le tableau `projects` dans `app/page.tsx` :
 
 ```typescript
 const projects: Project[] = [
@@ -84,7 +80,7 @@ const projects: Project[] = [
 
 ### Ajouter une séquence
 
-1. Ajoutez la séquence dans le tableau `sequences` dans `app/page.tsx` :
+1. Ajouter une séquence dans le tableau `sequences` dans `app/page.tsx` :
 
 ```typescript
 const sequences: Sequence[] = [
@@ -97,9 +93,7 @@ const sequences: Sequence[] = [
 ]
 ```
 
-2. Créez une nouvelle page dans `app/sequences/sequence-2/page.tsx` (utilisez `sequence-1` comme modèle)
-
-3. Ajoutez les ressources dans le tableau `resources` de la page de la séquence :
+3. Ajouter une ressources dans le tableau `resources` de la page de la séquence :
 
 ```typescript
 const resources: Resource[] = [
@@ -111,22 +105,3 @@ const resources: Resource[] = [
   },
 ]
 ```
-
-## 📱 Responsive Design
-
-- **Mobile** : 1 colonne
-- **Tablet** : 2 colonnes
-- **Desktop** : 3 colonnes pour les liens, 2-3 pour les projets
-
-## 🎭 Thème Koenigsegg
-
-Couleurs personnalisées définies dans `tailwind.config.ts` :
-- Noir profond : `#0a0a0a`
-- Gris foncé : `#1a1a1a`
-- Or : `#d4af37`
-- Argent : `#c0c0c0`
-
-## 📄 Licence
-
-Projet personnel - STI2D
-
