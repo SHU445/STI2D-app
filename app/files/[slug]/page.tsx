@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { ArrowLeftIcon } from '@/components/Icons'
@@ -86,7 +87,7 @@ export default function MarkdownPage() {
             <p className="text-koenigsegg-gold text-xl mb-4">Erreur</p>
             <p className="text-koenigsegg-silver">{error}</p>
             <p className="text-koenigsegg-silver text-sm mt-2">
-              Le fichier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">{slug}.md</code> n'existe pas dans le dossier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">public/files/</code>
+              Le fichier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">{slug}.md</code> n&apos;existe pas dans le dossier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">public/files/</code>
             </p>
           </motion.div>
         ) : (
@@ -120,7 +121,7 @@ export default function MarkdownPage() {
                 th: ({node, ...props}) => <th className="border border-koenigsegg-lightGray/20 px-4 py-2 bg-koenigsegg-gray/50 text-koenigsegg-gold font-semibold" {...props} />,
                 td: ({node, ...props}) => <td className="border border-koenigsegg-lightGray/20 px-4 py-2 text-koenigsegg-silver" {...props} />,
                 hr: ({node, ...props}) => <hr className="border-koenigsegg-lightGray/20 my-8" {...props} />,
-                img: ({node, ...props}) => <img className="rounded-lg my-4 max-w-full" {...props} />,
+                img: ({node, ...props}: any) => <Image className="rounded-lg my-4 max-w-full" alt={props.alt || ''} width={800} height={600} {...props} />,
               }}
             >
               {content}
