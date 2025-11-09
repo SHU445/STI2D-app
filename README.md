@@ -1,6 +1,6 @@
 # Dashboard STI2D
 
-Dashboard personnel moderne pour gérer vos ressources, projets et séquences de révision STI2D.
+Dashboard personnel moderne pour gérer vos ressources, projets et séquences STI2D.
 
 ## ✨ Fonctionnalités
 
