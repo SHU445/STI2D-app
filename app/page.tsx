@@ -25,6 +25,7 @@ interface Sequence {
 const usefulLinks: Link[] = [
   { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
   { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
+  { title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', description: 'Gmail' },
   { title: 'Neon DB', url: 'https://neon.com/', description: 'Base de données' },
   { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
   { title: 'MDN CSS', url: 'https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties', description: 'Référence CSS' },
@@ -224,6 +225,11 @@ export default function Home() {
                     {sequence.status === 'available' && (
                       <div className="flex items-center gap-2 mt-3 text-koenigsegg-gold">
                         <span className="text-xs font-medium">Disponible</span>
+                      </div>
+                    )}
+                    {sequence.status === 'coming-soon' && (
+                      <div className="flex items-center gap-2 mt-3 text-koenigsegg-gold">
+                        <span className="text-xs font-medium">À venir</span>
                       </div>
                     )}
                   </div>
