@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Dashboard STI2D',
-  description: 'Dashboard personnel pour ressources et projets STI2D',
+  description: 'Dashboard STI2D :ressources et projets ',
   icons: {
     icon: '/favicon.ico',
   },
