@@ -16,10 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="bg--black text-white antialiased">
+      <body className="bg-koenigsegg-black text-white antialiased">
         {children}
       </body>
     </html>
   )
 }
-
