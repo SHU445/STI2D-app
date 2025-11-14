@@ -56,6 +56,11 @@ const projects: Project[] = [
     url: 'https://ryse-portfolio.vercel.app',
     description: 'Portfolio professionnel moderne'
   },
+  {
+    title : "Maxence bo gosse",
+    url : 'https://www.google.com/search?client=firefox-b-d&sca_esv=3305bec65bd7fec6&channel=entpr&sxsrf=AE3TifPGUhrz93ppWSt83xqxyMW7bmdVfA:1763134331106&udm=2&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQ_pbg5bWizQs3A_kIenjtcpTTqBUdyVgzq0c3_k8z34GUa4Q_jiUQNh5K5XfwsFj1JlsgDwnS6F9uJOn6Vp7K2HZtT5LULhH94JKrGo2j1UkJ_2N5qinJWzS-26CJdpT-aJY9xBc1tMfHZ-nHWKProRdA6bPR3umSWBHs4qx9u4tAGm08&q=ben+laden&sa=X&ved=2ahUKEwiDt_yb-_GQAxX__7sIHf30DxcQtKgLegQIDxAB&biw=1920&bih=901&dpr=1#vhid=e72aFu1c1WLYlM&vssid=mosaic',
+    description : 'maxence bo gosse'
+  }
 ]
 
 const sequences: Sequence[] = [
