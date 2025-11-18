@@ -1,7 +1,7 @@
 # **_Projet |  Kit LoRa  -  Brainstorm_**
-=============
+-------
 
 ## User Case
- * kit portable
+* kit portable
     * Rapide à déployer
- * Communication LoRa
+* Communication LoRa
