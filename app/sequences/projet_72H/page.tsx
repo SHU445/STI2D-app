@@ -15,7 +15,7 @@ const resources: Resource[] = [
   {
     title: 'Ressource : Brainstorm - Kit LoRa',
     type: 'ressource',
-    url: '/files/kit_LoRa',
+    url: '/files/kit LoRa',
     description: 'Brainstorm sur le projet kit LoRa en .md'
   },
 ]
