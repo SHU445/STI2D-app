@@ -56,7 +56,6 @@ const projects: Project[] = [
     url: 'https://ryse-portfolio.vercel.app',
     description: 'Portfolio professionnel moderne'
   },
-
 ]
 
 const sequences: Sequence[] = [
@@ -71,6 +70,12 @@ const sequences: Sequence[] = [
     url: '/sequences/sequence-HTML',
     description: 'HTML',
     status: 'coming-soon'
+  },
+  {
+    title : 'Projet 72H',
+    url : '/sequences/projet_72H',
+    description : 'Idée de projet de 72H',
+    status : 'coming-soon'
   },
 ]
 
