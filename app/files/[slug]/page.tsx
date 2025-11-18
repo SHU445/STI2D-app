@@ -120,7 +120,7 @@ export default function MarkdownPage() {
                 table: ({node, ...props}) => <table className="w-full border-collapse border border-koenigsegg-lightGray/20 my-4" {...props} />,
                 th: ({node, ...props}) => <th className="border border-koenigsegg-lightGray/20 px-4 py-2 bg-koenigsegg-gray/50 text-koenigsegg-gold font-semibold" {...props} />,
                 td: ({node, ...props}) => <td className="border border-koenigsegg-lightGray/20 px-4 py-2 text-koenigsegg-silver" {...props} />,
-                hr: ({node, ...props}) => <hr className="border-koenigsegg-lightGray/20 my-8" {...props} />,
+                hr: ({node, ...props}) => <hr className="border-koenigsegg-lightGray/50 my-8" {...props} />,
                 img: ({node, ...props}: any) => <Image className="rounded-lg my-4 max-w-full" alt={props.alt || ''} width={800} height={600} {...props} />,
               }}
             >
