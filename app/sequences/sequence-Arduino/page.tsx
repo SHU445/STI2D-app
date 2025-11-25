@@ -1,16 +1,37 @@
+/**
+ * PAGE SÉQUENCE ARDUINO
+ * 
+ * Cette page affiche les ressources disponibles pour la séquence Arduino.
+ * Elle permet d'organiser et d'accéder facilement aux différents types de ressources :
+ * - Cours (documents de cours)
+ * - Exercices
+ * - Vidéos
+ * - Liens externes
+ * - Ressources Markdown
+ * - Images
+ * 
+ * Structure :
+ * - Header avec titre et bouton retour
+ * - Section description de la séquence
+ * - Liste des ressources avec icônes et liens
+ */
+
 'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { BookOpenIcon, DocumentIcon, VideoIcon, LinkIcon, ArrowLeftIcon, ImageIcon } from '@/components/Icons'
 
+// Interface TypeScript pour définir une ressource pédagogique
 interface Resource {
   title: string
-  type: 'cours' | 'exercice' | 'video' | 'lien' | 'ressource' | 'image'
-  url?: string
-  description?: string
+  type: 'cours' | 'exercice' | 'video' | 'lien' | 'ressource' | 'image' // Type de ressource
+  url?: string // URL interne (ex: /files/cours) ou externe (ex: https://...)
+  description?: string // Description optionnelle de la ressource
 }
 
+// Tableau contenant toutes les ressources disponibles pour cette séquence
+// Modifiez ce tableau pour ajouter/supprimer des ressources
 const resources: Resource[] = [
   {
     title: 'Lien : Arduino documentation',
@@ -26,22 +47,25 @@ const resources: Resource[] = [
   },
 ]
 
+// Configuration des animations Framer Motion pour le conteneur des ressources
+// Permet d'animer les ressources avec un délai entre chaque élément
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.1, // Délai de 0.1s entre chaque ressource
+      delayChildren: 0.2,   // Délai initial de 0.2s
     }
   }
 }
 
+// Configuration des animations pour chaque ressource individuelle
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 }, // Commence invisible et légèrement en bas
   visible: {
     opacity: 1,
-    y: 0,
+    y: 0, // Apparaît à sa position finale
     transition: {
       duration: 0.5,
       ease: 'easeOut'
@@ -49,6 +73,11 @@ const itemVariants = {
   }
 }
 
+/**
+ * Retourne l'icône appropriée selon le type de ressource
+ * @param type - Le type de ressource (cours, exercice, video, etc.)
+ * @returns Le composant d'icône correspondant
+ */
 const getIcon = (type: Resource['type']) => {
   const className = "w-6 h-6 text-koenigsegg-gold"
   switch (type) {
@@ -67,6 +96,11 @@ const getIcon = (type: Resource['type']) => {
   }
 }
 
+/**
+ * Retourne le label en français pour le type de ressource
+ * @param type - Le type de ressource
+ * @returns Le label en français (ex: "Cours", "Vidéo", etc.)
+ */
 const getTypeLabel = (type: Resource['type']) => {
   switch (type) {
     case 'cours':
@@ -84,10 +118,14 @@ const getTypeLabel = (type: Resource['type']) => {
   }
 }
 
+/**
+ * Composant principal de la page de séquence Arduino
+ * Affiche le header, la description et la liste des ressources
+ */
 export default function SequenceArduino() {
   return (
     <main className="min-h-screen">
-      {/* Header */}
+      {/* Header fixe avec titre et bouton retour vers le dashboard */}
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -165,18 +203,21 @@ export default function SequenceArduino() {
                         {resource.description}
                       </p>
                     )}
+                    {/* Affichage du lien vers la ressource */}
                     {resource.url && (
+                      // Si l'URL commence par "http", c'est un lien externe
                       resource.url.startsWith('http') ? (
                         <a 
                           href={resource.url}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener noreferrer" // Sécurité : empêche l'accès à window.opener
                           className="inline-flex items-center gap-2 mt-3 text-sm text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors"
                         >
                           <span>Accéder</span>
                           <LinkIcon className="w-4 h-4" />
                         </a>
                       ) : (
+                        // Sinon, c'est un lien interne Next.js (ex: /files/cours)
                         <Link 
                           href={resource.url}
                           className="inline-flex items-center gap-2 mt-3 text-sm text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors"

@@ -1,57 +1,163 @@
+/**
+ * STYLES GLOBAUX
+ * 
+ * Ce fichier contient tous les styles CSS globaux de l'application.
+ * 
+ * Contenu :
+ * - Import des polices Google Fonts (Inter et Montserrat)
+ * - Directives Tailwind CSS (@tailwind)
+ * - Variables CSS pour les polices
+ * - Reset CSS de base
+ * - Styles de la scrollbar
+ * - Styles de sélection de texte
+ * - Styles pour la coloration syntaxique (highlight.js)
+ */
+
+// Import des polices depuis Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Directives Tailwind CSS - génèrent les classes utilitaires
+@tailwind base;      // Styles de base (reset, typographie, etc.)
+@tailwind components; // Composants réutilisables
+@tailwind utilities;  // Classes utilitaires (marges, padding, etc.)
 
+// Variables CSS pour les polices (utilisées dans tailwind.config.ts)
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 }
 
+// Reset CSS : supprime les marges et paddings par défaut
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; // Le padding et la bordure sont inclus dans la largeur/hauteur
 }
 
+// Défilement fluide vers les ancres
 html {
   scroll-behavior: smooth;
 }
 
+// Styles de base pour le body
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  font-family: var(--font-inter);
-  overflow-x: hidden;
+  background-color: #0a0a0a; // Fond noir (koenigsegg-black)
+  color: #ffffff;            // Texte blanc
+  font-family: var(--font-inter); // Police principale
+  overflow-x: hidden;        // Empêche le défilement horizontal
 }
 
-/* Scrollbar styling */
+/* Personnalisation de la scrollbar (barre de défilement) */
+/* Compatible avec les navigateurs basés sur WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 10px; /* Largeur de la scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #1a1a1a; /* Couleur du rail de la scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #404040;
-  border-radius: 5px;
+  background: #404040; /* Couleur du curseur de la scrollbar */
+  border-radius: 5px;   /* Coins arrondis */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: #555555; /* Couleur au survol */
 }
 
-/* Selection styling */
+/* Personnalisation de la sélection de texte */
+/* Quand l'utilisateur sélectionne du texte, il apparaît en or sur fond noir */
 ::selection {
-  background-color: #d4af37;
-  color: #0a0a0a;
+  background-color: #d4af37; /* Fond or */
+  color: #0a0a0a;            /* Texte noir */
 }
 
+/* Version pour Firefox */
 ::-moz-selection {
   background-color: #d4af37;
   color: #0a0a0a;
+}
+
+/* Styles pour la coloration syntaxique du code (bibliothèque highlight.js) */
+/* Ces styles sont appliqués automatiquement aux blocs de code dans les fichiers Markdown */
+.hljs {
+  background: #1a1a1a !important; /* Fond sombre pour les blocs de code */
+  color: #c0c0c0 !important;       /* Couleur de texte par défaut */
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #d4af37;
+}
+
+.hljs-string,
+.hljs-literal {
+  color: #98c379;
+}
+
+.hljs-number {
+  color: #79c0ff;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #d2a8ff;
+}
+
+.hljs-variable,
+.hljs-attr {
+  color: #ffa657;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ff7b72;
+}
+
+.hljs-meta {
+  color: #8b949e;
+}
+
+/* Amélioration des styles pour les blocs de code */
+pre code.hljs {
+  padding: 0;
+  background: transparent;
+}
+
+pre.hljs {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+/* Styles pour les liens d'ancres automatiques */
+.anchor-link {
+  color: #d4af37;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  opacity: 1;
+}
+
+.anchor-link:hover {
+  opacity: 1 !important;
+  color: #d4af37;
 }
 

@@ -1,9 +1,26 @@
+/**
+ * COMPOSANT D'ICÔNES SVG
+ * 
+ * Ce fichier contient tous les composants d'icônes SVG utilisés dans l'application.
+ * Les icônes sont créées manuellement avec SVG pour un contrôle total du style.
+ * 
+ * Avantages :
+ * - Pas de dépendance externe
+ * - Personnalisation facile des couleurs via className
+ * - Taille ajustable via les props
+ * - Performance optimale (pas de chargement externe)
+ */
+
 import React from 'react'
 
+// Interface TypeScript pour les props des icônes
 interface IconProps {
-  className?: string
+  className?: string // Classes CSS pour personnaliser la taille et la couleur
 }
 
+/**
+ * Icône de lien externe - Utilisée pour les liens qui s'ouvrent dans un nouvel onglet
+ */
 export const ExternalLinkIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +38,9 @@ export const ExternalLinkIcon: React.FC<IconProps> = ({ className = "w-5 h-5" })
   </svg>
 )
 
+/**
+ * Icône de code - Utilisée pour la section "Projets"
+ */
 export const CodeIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +58,9 @@ export const CodeIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   </svg>
 )
 
+/**
+ * Icône de livre ouvert - Utilisée pour la section "Séquences"
+ */
 export const BookOpenIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +78,9 @@ export const BookOpenIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => 
   </svg>
 )
 
+/**
+ * Icône de document - Utilisée pour les ressources de type document
+ */
 export const DocumentIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +98,9 @@ export const DocumentIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => 
   </svg>
 )
 
+/**
+ * Icône de vidéo - Utilisée pour les ressources vidéo
+ */
 export const VideoIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -89,6 +118,9 @@ export const VideoIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   </svg>
 )
 
+/**
+ * Icône de lien - Utilisée pour les liens génériques
+ */
 export const LinkIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +138,9 @@ export const LinkIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   </svg>
 )
 
+/**
+ * Icône de flèche vers la gauche - Utilisée pour les boutons "Retour"
+ */
 export const ArrowLeftIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -123,6 +158,9 @@ export const ArrowLeftIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) =>
   </svg>
 )
 
+/**
+ * Icône d'image - Utilisée pour les ressources de type image
+ */
 export const ImageIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

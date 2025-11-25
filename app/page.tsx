@@ -1,27 +1,35 @@
+/**
+ * PAGE D'ACCUEIL - Dashboard STI2D
+ */
+
 'use client'
 
 import { motion } from 'framer-motion'
 import { ExternalLinkIcon, CodeIcon, BookOpenIcon } from '@/components/Icons'
 
+// Interface - définir la structure d'un lien utile
 interface Link {
   title: string
   url: string
   description?: string
 }
 
+// Interface - définir la structure d'un projet
 interface Project {
   title: string
   url: string
   description: string
 }
 
+// Interface - définir la structure d'une séquence pédagogique
 interface Sequence {
   title: string
   url: string
   description: string
-  status: 'available' | 'coming-soon'
+  status: 'available' | 'coming-soon' // Statut 
 }
 
+// Tableau - liens utiles affichés sur la page l
 const usefulLinks: Link[] = [
   { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
   { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
@@ -30,6 +38,7 @@ const usefulLinks: Link[] = [
   { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
   { title: 'MDN CSS', url: 'https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties', description: 'Référence CSS' },
   { title: 'MDN JavaScript', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference', description: 'Référence JavaScript' },
+  { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
   { title: 'Adobe color', url: 'https://color.adobe.com/fr/create/color-wheel', description: 'Adobe color' },
   { title: 'Color Hunt', url: 'https://colorhunt.co/', description: 'Color Hunt' },
   { title: 'Color Space', url: 'https://mycolor.space/', description: 'Color Space' },
@@ -37,9 +46,10 @@ const usefulLinks: Link[] = [
   { title: 'ENT', url: 'https://porte-oisans.ent.auvergnerhonealpes.fr/sg.do?PROC=PAGE_ACCUEIL&ACTION=VALIDER', description: 'Espace numérique' },
   { title: 'ELEA', url: 'https://aura-38-sud.elea.apps.education.fr/local/elea_dashboard/index.php', description: 'Plateforme pédagogique' },
   { title: 'TinkerCAD', url: 'https://www.tinkercad.com/login', description: 'CAO en ligne' },
-  { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
 ]
 
+// Tableau - projets personnels 
+// Chaque projet a un titre, une URL (vers Vercel ou autre) et une description
 const projects: Project[] = [
   {
     title: 'Calisthenie Tracker',
@@ -58,6 +68,7 @@ const projects: Project[] = [
   },
 ]
 
+// Tableau - séquences 
 const sequences: Sequence[] = [
   {
     title: 'SEQ 1 - Arduino',
@@ -79,17 +90,20 @@ const sequences: Sequence[] = [
   },
 ]
 
+// Configuration - animations Framer Motion pour les conteneurs
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.1, // délai entre chaque enfant
+      delayChildren: 0.2,   // Délai initial de 0.2s avant de commencer
     }
   }
 }
 
+// Configuration des animations pour les éléments individuels
+// Chaque élément apparaît avec un effet de translation depuis le bas (y: 20)
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -102,10 +116,14 @@ const itemVariants = {
   }
 }
 
+/**
+ * Composant principal de la page d'accueil
+ * Affiche le header, les sections de liens, projets et séquences
+ */
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Header */}
+      {/* Header fixe en haut de la page avec le titre du dashboard */}
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -122,8 +140,9 @@ export default function Home() {
         </div>
       </motion.header>
 
+      {/* Conteneur principal avec largeur maximale et padding responsive */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Useful Links Section */}
+        {/* Section des liens utiles - Affiche tous les liens dans une grille responsive */}
         <motion.section 
           variants={containerVariants}
           initial="hidden"
@@ -164,7 +183,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Projects Section */}
+        {/* Section des projets personnels - Affiche les projets dans une grille avec effets hover */}
         <motion.section 
           variants={containerVariants}
           initial="hidden"
@@ -204,7 +223,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Sequences Section */}
+        {/* Section des séquences pédagogiques - Affiche les séquences avec leur statut (disponible/à venir) */}
         <motion.section 
           variants={containerVariants}
           initial="hidden"
@@ -251,7 +270,7 @@ export default function Home() {
         </motion.section>
       </div>
 
-      {/* Footer */}
+      {/* Footer avec informations sur le projet et les technologies utilisées */}
       <motion.footer 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
