@@ -27,7 +27,7 @@ const config: Config = {
       // Palette de couleurs personnalisée inspirée de Koenigsegg (voiture de luxe)
       // Utilisation: bg-koenigsegg-black, text-koenigsegg-gold, etc.
       colors: {
-        koenigsegg: {
+        designSS: {
           black: '#0a0a0a',        // Fond principal très sombre
           darkGray: '#1a1a1a',     // Fond secondaire
           gray: '#2a2a2a',         // Fond des cartes
