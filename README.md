@@ -239,3 +239,5 @@ colors: {
 ```
 
 Pour changer les couleurs, modifiez ces valeurs et les classes Tailwind s'adapteront automatiquement.
+
+
