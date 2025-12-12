@@ -1,0 +1,50 @@
+https://sti2d-app.vercel.app/
+Documentation grid column : https://tailwindcss.com/docs/grid-column
+
+Structure :
+ligne 11
+
+    interface Link {
+      title: string        // Titre du lien (obligatoire)
+      url: string          // URL du lien    (obligatoire)  
+      description?: string // Description (optionnelle)
+    }
+
+Table des liens :
+ligne 33
+
+    const usefulLinks: Link[] = [
+      { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
+      { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
+      // ... 
+    ]   
+
+Affichage : 
+Fonction map()
+ligne 156
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      {usefulLinks.map((link, index) => (
+        <motion.a
+          key={index}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="..."
+        >
+          <h3>{link.title}</h3>
+          <p>{link.description}</p>
+        </motion.a>
+      ))}
+    </div>
+
+Grille :
+disposition en grille :
+ligne 156
+
+    "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+
+- grid : active le mode grille CSS
+- grid-cols-1 : 1 colonne par défaut
+- sm:grid-cols-2 : 2 colonnes sur écrans moyens
+- lg:grid-cols-3 : 3 colonnes sur grands écrans
