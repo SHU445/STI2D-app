@@ -1,0 +1,192 @@
+================================================================================
+           EXPLICATION DU SYSTÈME DE THÈME - Dashboard STI2D
+================================================================================
+
+Le thème de l'application est défini à UN SEUL ENDROIT, ce qui permet de 
+changer l'apparence complète du site très facilement.
+
+================================================================================
+1. OÙ EST DÉFINI LE THÈME ?
+================================================================================
+
+Le thème est défini dans 2 fichiers principaux :
+
+    📁 tailwind.config.ts  → Couleurs, polices, animations
+    📁 app/globals.css     → Styles globaux (scrollbar, sélection, etc.)
+
+================================================================================
+2. LA PALETTE DE COULEURS (tailwind.config.ts)
+================================================================================
+
+Toutes les couleurs sont définies dans un objet "colors" :
+
+    colors: {
+      designSS: {
+        black: '#0a0a0a',        // Fond principal très sombre
+        darkGray: '#1a1a1a',     // Fond secondaire
+        gray: '#2a2a2a',         // Fond des cartes
+        lightGray: '#404040',    // Bordures
+        gold: '#d4af37',         // Couleur d'accent (OR)
+        silver: '#c0c0c0',       // Texte secondaire
+        accent: '#8b7355',       // Accent secondaire
+      },
+    },
+
+POUR CHANGER LE THÈME, il suffit de modifier ces valeurs !
+
+Exemple - Passer à un thème BLEU :
+
+    colors: {
+      designSS: {
+        black: '#0a0a1a',        
+        darkGray: '#1a1a2a',     
+        gray: '#2a2a3a',         
+        lightGray: '#404060',    
+        gold: '#4a90d9',         
+        silver: '#b0b0c0',       
+        accent: '#6080a0',       
+      },
+    },
+
+================================================================================
+3. COMMENT UTILISER LES COULEURS DANS LE CODE
+================================================================================
+
+Grâce à Tailwind CSS, on utilise les couleurs avec des classes simples :
+
+    Syntaxe : {propriété}-designSS-{couleur}
+
+Exemples :
+    bg-designSS-black       → Fond noir
+    bg-designSS-gold        → Fond or
+    text-designSS-gold      → Texte or
+    text-designSS-silver    → Texte argenté
+    border-designSS-gray    → Bordure grise
+
+Dans le JSX :
+    <div className="bg-designSS-black text-designSS-gold">
+      Mon texte en or sur fond noir
+    </div>
+
+================================================================================
+4. LES POLICES (tailwind.config.ts)
+================================================================================
+
+Les polices sont définies dans l'objet "fontFamily" :
+
+    fontFamily: {
+      sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      display: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+    },
+
+Utilisation :
+    font-sans     → Police Inter (texte normal)
+    font-display  → Police Montserrat (titres)
+
+POUR CHANGER LES POLICES :
+1. Modifier l'import dans globals.css
+2. Mettre à jour les variables CSS dans :root
+3. Mettre à jour tailwind.config.ts
+
+================================================================================
+5. LES STYLES GLOBAUX (globals.css)
+================================================================================
+
+Ce fichier définit les styles qui s'appliquent PARTOUT :
+
+A) FOND ET TEXTE PAR DÉFAUT
+    body {
+      background-color: #0a0a0a;  // Couleur de fond
+      color: #ffffff;              // Couleur du texte
+    }
+
+B) SCROLLBAR PERSONNALISÉE
+    ::-webkit-scrollbar-track { background: #1a1a1a; }
+    ::-webkit-scrollbar-thumb { background: #404040; }
+
+C) SÉLECTION DE TEXTE
+    ::selection {
+      background-color: #d4af37;  // Fond or quand on sélectionne
+      color: #0a0a0a;             // Texte noir
+    }
+
+================================================================================
+6. AVANTAGES DE CETTE ARCHITECTURE
+================================================================================
+
+✅ CENTRALISATION
+   → Toutes les couleurs à un seul endroit
+   → Changer une couleur = change partout dans l'app
+
+✅ COHÉRENCE
+   → Impossible d'avoir des couleurs incohérentes
+   → Le thème reste uniforme
+
+✅ MAINTENABILITÉ
+   → Facile à modifier
+   → Pas besoin de chercher les couleurs dans chaque fichier
+
+✅ RÉUTILISABILITÉ
+   → Les classes Tailwind sont réutilisables partout
+   → Pas de duplication de code CSS
+
+================================================================================
+7. EXEMPLE : CHANGER LE THÈME EN 5 MINUTES
+================================================================================
+
+Pour passer d'un thème SOMBRE/OR à un thème CLAIR/BLEU :
+
+ÉTAPE 1 - Modifier tailwind.config.ts :
+    colors: {
+      designSS: {
+        black: '#f5f5f5',        // Blanc cassé (au lieu de noir)
+        darkGray: '#e0e0e0',     // Gris clair
+        gray: '#d0d0d0',         
+        lightGray: '#b0b0b0',    
+        gold: '#2563eb',         // Bleu (au lieu d'or)
+        silver: '#404040',       // Texte gris foncé
+        accent: '#1d4ed8',       
+      },
+    },
+
+ÉTAPE 2 - Modifier globals.css :
+    body {
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+    }
+    
+    ::selection {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+
+C'est tout ! Le site entier change d'apparence.
+
+================================================================================
+8. SCHÉMA RÉCAPITULATIF
+================================================================================
+
+    tailwind.config.ts
+          │
+          ├── colors.designSS
+          │       ├── black, darkGray, gray...
+          │       └── gold, silver, accent
+          │
+          └── fontFamily
+                  ├── sans (Inter)
+                  └── display (Montserrat)
+                         │
+                         ▼
+    ┌─────────────────────────────────────────┐
+    │          CLASSES TAILWIND               │
+    │  bg-designSS-gold, text-designSS-*  │
+    └─────────────────────────────────────────┘
+                         │
+                         ▼
+    ┌─────────────────────────────────────────┐
+    │         COMPOSANTS REACT                │
+    │  <div className="bg-designSS-black">  │
+    └─────────────────────────────────────────┘
+
+================================================================================
+

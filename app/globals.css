@@ -13,15 +13,15 @@
  * - Styles pour la coloration syntaxique (highlight.js)
  */
 
-// Import des polices depuis Google Fonts
+/** Import des polices depuis Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-// Directives Tailwind CSS - génèrent les classes utilitaires
-@tailwind base;      // Styles de base (reset, typographie, etc.)
-@tailwind components; // Composants réutilisables
-@tailwind utilities;  // Classes utilitaires (marges, padding, etc.)
+/** Directives Tailwind CSS - génèrent les classes utilitaires */
+@tailwind base;      /** Styles de base (reset, typographie, etc.) */
+@tailwind components; /** Composants réutilisables */
+@tailwind utilities;  /** Classes utilitaires (marges, padding, etc.) */
 
-// Variables CSS pour les polices (utilisées dans tailwind.config.ts)
+/** Variables CSS pour les polices (utilisées dans tailwind.config.ts) */
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
@@ -31,20 +31,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; // Le padding et la bordure sont inclus dans la largeur/hauteur
+  box-sizing: border-box; /** Le padding et la bordure sont inclus dans la largeur/hauteur */
 }
 
-// Défilement fluide vers les ancres
+/** Défilement fluide vers les ancres */
 html {
   scroll-behavior: smooth;
 }
 
-// Styles de base pour le body
+/** Styles de base pour le body */
 body {
-  background-color: #0a0a0a; // Fond noir (koenigsegg-black)
-  color: #ffffff;            // Texte blanc
-  font-family: var(--font-inter); // Police principale
-  overflow-x: hidden;        // Empêche le défilement horizontal
+  background-color: #0a0a0a; /** Fond noir (koenigsegg-black) */
+  color: #ffffff;            /** Texte blanc */
+  font-family: var(--font-inter); /** Police principale */
+  overflow-x: hidden;        /** Empêche le défilement horizontal */
 }
 
 /* Personnalisation de la scrollbar (barre de défilement) */

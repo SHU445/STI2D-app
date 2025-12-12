@@ -120,18 +120,18 @@ export default function MarkdownPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="border-b border-koenigsegg-gray/30 backdrop-blur-sm bg-koenigsegg-black/50 sticky top-0 z-50"
+        className="border-b border-designSS-gray/30 backdrop-blur-sm bg-designSS-black/50 sticky top-0 z-50"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={() => router.back()}
-            className="inline-flex items-center gap-2 text-koenigsegg-silver hover:text-koenigsegg-gold transition-colors duration-300 mb-4 group"
+            className="inline-flex items-center gap-2 text-designSS-silver hover:text-designSS-gold transition-colors duration-300 mb-4 group"
           >
             <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
             <span className="text-sm font-medium">Retour</span>
           </button>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight">
-            <span className="text-koenigsegg-gold">{formatTitle(slug || 'Document')}</span>
+            <span className="text-designSS-gold">{formatTitle(slug || 'Document')}</span>
           </h1>
         </div>
       </motion.header>
@@ -139,7 +139,7 @@ export default function MarkdownPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-koenigsegg-silver">Chargement...</p>
+            <p className="text-designSS-silver">Chargement...</p>
           </div>
         ) : error ? (
           <motion.div
@@ -147,30 +147,30 @@ export default function MarkdownPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center py-12"
           >
-            <p className="text-koenigsegg-gold text-xl mb-4">Erreur</p>
-            <p className="text-koenigsegg-silver">{error}</p>
-            <p className="text-koenigsegg-silver text-sm mt-2">
-              Le fichier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">{slug}.md</code> n&apos;existe pas dans le dossier <code className="bg-koenigsegg-gray/50 px-2 py-1 rounded">public/files/</code>
+            <p className="text-designSS-gold text-xl mb-4">Erreur</p>
+            <p className="text-designSS-silver">{error}</p>
+            <p className="text-designSS-silver text-sm mt-2">
+              Le fichier <code className="bg-designSS-gray/50 px-2 py-1 rounded">{slug}.md</code> n&apos;existe pas dans le dossier <code className="bg-designSS-gray/50 px-2 py-1 rounded">public/files/</code>
             </p>
           </motion.div>
         ) : !mounted ? (
           <div className="text-center py-12">
-            <p className="text-koenigsegg-silver">Chargement...</p>
+            <p className="text-designSS-silver">Chargement...</p>
           </div>
         ) : (
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="prose prose-invert prose-headings:text-koenigsegg-gold prose-p:text-koenigsegg-silver prose-strong:text-white prose-code:text-koenigsegg-gold prose-pre:bg-koenigsegg-darkGray prose-pre:border prose-pre:border-koenigsegg-lightGray/20 prose-a:text-koenigsegg-gold prose-a:hover:text-koenigsegg-gold/80 max-w-none"
+            className="prose prose-invert prose-headings:text-designSS-gold prose-p:text-designSS-silver prose-strong:text-white prose-code:text-designSS-gold prose-pre:bg-designSS-darkGray prose-pre:border prose-pre:border-designSS-lightGray/20 prose-a:text-designSS-gold prose-a:hover:text-designSS-gold/80 max-w-none"
           >
             {frontMatter && (
-              <div className="mb-6 p-4 bg-koenigsegg-gray/30 rounded-lg border border-koenigsegg-lightGray/20">
-                <h3 className="text-koenigsegg-gold font-semibold mb-2">Métadonnées</h3>
-                <dl className="space-y-1 text-sm text-koenigsegg-silver">
+              <div className="mb-6 p-4 bg-designSS-gray/30 rounded-lg border border-designSS-lightGray/20">
+                <h3 className="text-designSS-gold font-semibold mb-2">Métadonnées</h3>
+                <dl className="space-y-1 text-sm text-designSS-silver">
                   {Object.entries(frontMatter).map(([key, value]) => (
                     <div key={key} className="flex">
-                      <dt className="font-medium text-koenigsegg-gold mr-2">{key}:</dt>
+                      <dt className="font-medium text-designSS-gold mr-2">{key}:</dt>
                       <dd>{String(value)}</dd>
                     </div>
                   ))}
@@ -189,70 +189,70 @@ export default function MarkdownPage() {
               // Personnalisation des composants HTML générés
               // Permet d'appliquer des classes Tailwind personnalisées
               components={{
-                h1: ({node, ...props}: any) => <h1 className="text-3xl font-display font-bold text-koenigsegg-gold mb-4 mt-8 scroll-mt-20" {...props} />,
-                h2: ({node, ...props}: any) => <h2 className="text-2xl font-display font-semibold text-koenigsegg-gold mb-3 mt-6 scroll-mt-20" {...props} />,
-                h3: ({node, ...props}: any) => <h3 className="text-xl font-display font-semibold text-koenigsegg-gold mb-2 mt-4 scroll-mt-20" {...props} />,
-                h4: ({node, ...props}: any) => <h4 className="text-lg font-display font-semibold text-koenigsegg-gold mb-2 mt-4 scroll-mt-20" {...props} />,
-                h5: ({node, ...props}: any) => <h5 className="text-base font-display font-semibold text-koenigsegg-gold mb-2 mt-4 scroll-mt-20" {...props} />,
-                h6: ({node, ...props}: any) => <h6 className="text-sm font-display font-semibold text-koenigsegg-gold mb-2 mt-4 scroll-mt-20" {...props} />,
-                p: ({node, ...props}) => <p className="text-koenigsegg-silver leading-relaxed mb-4" {...props} />,
+                h1: ({node, ...props}: any) => <h1 className="text-3xl font-display font-bold text-designSS-gold mb-4 mt-8 scroll-mt-20" {...props} />,
+                h2: ({node, ...props}: any) => <h2 className="text-2xl font-display font-semibold text-designSS-gold mb-3 mt-6 scroll-mt-20" {...props} />,
+                h3: ({node, ...props}: any) => <h3 className="text-xl font-display font-semibold text-designSS-gold mb-2 mt-4 scroll-mt-20" {...props} />,
+                h4: ({node, ...props}: any) => <h4 className="text-lg font-display font-semibold text-designSS-gold mb-2 mt-4 scroll-mt-20" {...props} />,
+                h5: ({node, ...props}: any) => <h5 className="text-base font-display font-semibold text-designSS-gold mb-2 mt-4 scroll-mt-20" {...props} />,
+                h6: ({node, ...props}: any) => <h6 className="text-sm font-display font-semibold text-designSS-gold mb-2 mt-4 scroll-mt-20" {...props} />,
+                p: ({node, ...props}) => <p className="text-designSS-silver leading-relaxed mb-4" {...props} />,
                 strong: ({node, ...props}) => <strong className="font-bold text-white" {...props} />,
-                em: ({node, ...props}) => <em className="italic text-koenigsegg-silver" {...props} />,
-                del: ({node, ...props}) => <del className="line-through text-koenigsegg-silver/60" {...props} />,
+                em: ({node, ...props}) => <em className="italic text-designSS-silver" {...props} />,
+                del: ({node, ...props}) => <del className="line-through text-designSS-silver/60" {...props} />,
                 // Gestion du code : différencie le code inline (`code`) et les blocs de code (```code```)
                 code: ({node, inline, className, children, ...props}: any) => {
                   if (inline) {
                     // Code inline : style simple avec fond gris
-                    return <code className="bg-koenigsegg-gray/50 text-koenigsegg-gold px-1.5 py-0.5 rounded text-sm font-mono" {...props}>{children}</code>
+                    return <code className="bg-designSS-gray/50 text-designSS-gold px-1.5 py-0.5 rounded text-sm font-mono" {...props}>{children}</code>
                   }
                   // Bloc de code : style plus élaboré avec bordure et padding
                   return (
-                    <code className={`block bg-koenigsegg-darkGray text-koenigsegg-silver p-4 rounded-lg overflow-x-auto border border-koenigsegg-lightGray/20 ${className || ''}`} {...props}>
+                    <code className={`block bg-designSS-darkGray text-designSS-silver p-4 rounded-lg overflow-x-auto border border-designSS-lightGray/20 ${className || ''}`} {...props}>
                       {children}
                     </code>
                   )
                 },
-                pre: ({node, ...props}: any) => <pre className="bg-koenigsegg-darkGray border border-koenigsegg-lightGray/20 rounded-lg p-4 overflow-x-auto mb-4" {...props} />,
+                pre: ({node, ...props}: any) => <pre className="bg-designSS-darkGray border border-designSS-lightGray/20 rounded-lg p-4 overflow-x-auto mb-4" {...props} />,
                 // Gestion des liens : différencie les liens internes (ancres #) et externes
                 a: ({node, href, children, ...props}: any) => {
                   // Liens internes (ancres vers des sections de la page)
                   if (href?.startsWith('#')) {
-                    return <a href={href} className="text-koenigsegg-gold hover:text-koenigsegg-gold/80 underline" {...props}>{children}</a>
+                    return <a href={href} className="text-designSS-gold hover:text-designSS-gold/80 underline" {...props}>{children}</a>
                   }
                   // Liens externes : ouverture dans un nouvel onglet avec sécurité
-                  return <a href={href} target="_blank" rel="noopener noreferrer" className="text-koenigsegg-gold hover:text-koenigsegg-gold/80 underline" {...props}>{children}</a>
+                  return <a href={href} target="_blank" rel="noopener noreferrer" className="text-designSS-gold hover:text-designSS-gold/80 underline" {...props}>{children}</a>
                 },
-                ul: ({node, ...props}) => <ul className="list-disc list-outside text-koenigsegg-silver mb-4 space-y-2 ml-6" {...props} />,
-                ol: ({node, ...props}) => <ol className="list-decimal list-outside text-koenigsegg-silver mb-4 space-y-2 ml-6" {...props} />,
+                ul: ({node, ...props}) => <ul className="list-disc list-outside text-designSS-silver mb-4 space-y-2 ml-6" {...props} />,
+                ol: ({node, ...props}) => <ol className="list-decimal list-outside text-designSS-silver mb-4 space-y-2 ml-6" {...props} />,
                 // Gestion des listes : support des checklists GitHub Flavored Markdown
                 // Exemple: - [ ] Tâche non faite, - [x] Tâche faite
                 li: ({node, checked, ...props}: any) => {
                   // Si c'est une checklist (checked est défini)
                   if (checked !== null && checked !== undefined) {
                     return (
-                      <li className="text-koenigsegg-silver list-none flex items-start gap-2">
-                        <input type="checkbox" checked={checked} readOnly className="mt-1 w-4 h-4 text-koenigsegg-gold bg-koenigsegg-gray border-koenigsegg-lightGray rounded focus:ring-koenigsegg-gold" />
+                      <li className="text-designSS-silver list-none flex items-start gap-2">
+                        <input type="checkbox" checked={checked} readOnly className="mt-1 w-4 h-4 text-designSS-gold bg-designSS-gray border-designSS-lightGray rounded focus:ring-designSS-gold" />
                         <span {...props} />
                       </li>
                     )
                   }
                   // Liste normale
-                  return <li className="text-koenigsegg-silver" {...props} />
+                  return <li className="text-designSS-silver" {...props} />
                 },
-                blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-koenigsegg-gold pl-4 italic text-koenigsegg-silver my-4" {...props} />,
-                table: ({node, ...props}) => <div className="overflow-x-auto my-4"><table className="w-full border-collapse border border-koenigsegg-lightGray/20" {...props} /></div>,
-                thead: ({node, ...props}) => <thead className="bg-koenigsegg-gray/50" {...props} />,
+                blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-designSS-gold pl-4 italic text-designSS-silver my-4" {...props} />,
+                table: ({node, ...props}) => <div className="overflow-x-auto my-4"><table className="w-full border-collapse border border-designSS-lightGray/20" {...props} /></div>,
+                thead: ({node, ...props}) => <thead className="bg-designSS-gray/50" {...props} />,
                 tbody: ({node, ...props}) => <tbody {...props} />,
-                tr: ({node, ...props}) => <tr className="border-b border-koenigsegg-lightGray/20" {...props} />,
+                tr: ({node, ...props}) => <tr className="border-b border-designSS-lightGray/20" {...props} />,
                 th: ({node, style, ...props}: any) => {
                   const alignClass = style?.textAlign === 'center' ? 'text-center' : style?.textAlign === 'right' ? 'text-right' : 'text-left'
-                  return <th className={`border border-koenigsegg-lightGray/20 px-4 py-2 text-koenigsegg-gold font-semibold ${alignClass}`} {...props} />
+                  return <th className={`border border-designSS-lightGray/20 px-4 py-2 text-designSS-gold font-semibold ${alignClass}`} {...props} />
                 },
                 td: ({node, style, ...props}: any) => {
                   const alignClass = style?.textAlign === 'center' ? 'text-center' : style?.textAlign === 'right' ? 'text-right' : 'text-left'
-                  return <td className={`border border-koenigsegg-lightGray/20 px-4 py-2 text-koenigsegg-silver ${alignClass}`} {...props} />
+                  return <td className={`border border-designSS-lightGray/20 px-4 py-2 text-designSS-silver ${alignClass}`} {...props} />
                 },
-                hr: ({node, ...props}) => <hr className="border-koenigsegg-lightGray/50 my-8" {...props} />,
+                hr: ({node, ...props}) => <hr className="border-designSS-lightGray/50 my-8" {...props} />,
                 // Gestion des images : différencie les images externes (URL) et locales (Next.js Image)
                 img: ({node, src, alt, ...props}: any) => {
                   // Image externe (commence par http/https)
@@ -264,11 +264,11 @@ export default function MarkdownPage() {
                 },
                 // Support des notes de bas de page (footnotes)
                 // Exemple: Texte[^1] puis [^1]: Note explicative
-                sup: ({node, ...props}: any) => <sup className="text-koenigsegg-gold text-xs" {...props} />,
+                sup: ({node, ...props}: any) => <sup className="text-designSS-gold text-xs" {...props} />,
                 section: ({node, ...props}: any) => {
                   // Section spéciale pour afficher les notes de bas de page
                   if (props.className?.includes('footnotes')) {
-                    return <section className="mt-8 pt-4 border-t border-koenigsegg-lightGray/20" {...props} />
+                    return <section className="mt-8 pt-4 border-t border-designSS-lightGray/20" {...props} />
                   }
                   return <section {...props} />
                 },
@@ -285,12 +285,12 @@ export default function MarkdownPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="border-t border-koenigsegg-gray/30 mt-16 sm:mt-20"
+        className="border-t border-designSS-gray/30 mt-16 sm:mt-20"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
           <button
             onClick={() => router.back()}
-            className="text-koenigsegg-gold hover:text-koenigsegg-gold/80 transition-colors text-sm font-medium inline-flex items-center gap-2"
+            className="text-designSS-gold hover:text-designSS-gold/80 transition-colors text-sm font-medium inline-flex items-center gap-2"
           >
             <ArrowLeftIcon className="w-4 h-4" />
             Retour
