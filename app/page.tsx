@@ -70,7 +70,7 @@ const projects: Project[] = [
     title: 'IP Tool',
     url: 'https://my-iptool.vercel.app/',
     description: 'Outil pour manipulation d\'IP'
-  }
+  },
   {
     title: 'Note Solve',
     url: 'https://note-solve.vercel.app/',
