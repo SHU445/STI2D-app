@@ -67,6 +67,11 @@ const projects: Project[] = [
     description: 'Application de suivi d\'entraînement calisthénie'
   },
   {
+    title: 'IP Tool',
+    url: 'https://my-iptool.vercel.app/',
+    description: 'Outil pour manipulation d\'IP'
+  }
+  {
     title: 'Note Solve',
     url: 'https://note-solve.vercel.app/',
     description: 'Outil de gestion et calcul de notes'
