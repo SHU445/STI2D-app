@@ -5,10 +5,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLinkIcon, CodeIcon, BookOpenIcon } from '@/components/Icons'
+import Link from 'next/link'
+import { ExternalLinkIcon, CodeIcon, BookOpenIcon, ClipboardIcon } from '@/components/Icons'
 
 // Interface - définir la structure d'un lien utile
-interface Link {
+interface UsefulLink {
   title: string
   url: string
   description?: string
@@ -30,7 +31,7 @@ interface Sequence {
 }
 
 // Tableau - liens utiles affichés sur la page l
-const usefulLinks: Link[] = [
+const usefulLinks: UsefulLink[] = [
   { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
   { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
   { title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', description: 'Gmail' },
@@ -195,6 +196,44 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
               </motion.a>
             ))}
+          </div>
+        </motion.section>
+
+        {/* Section Outils - Clipboard éphémère et autres outils */}
+        <motion.section 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12 sm:mb-16"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+            <ClipboardIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Outils</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            <motion.div variants={itemVariants}>
+              <Link
+                href="/clipboard"
+                className="group relative block bg-gradient-to-br from-designSS-darkGray via-designSS-gray to-designSS-darkGray border border-designSS-lightGray/30 rounded-lg p-6 sm:p-7 hover:border-designSS-gold transition-all duration-300 hover:shadow-2xl hover:shadow-designSS-gold/20 overflow-hidden"
+              >
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <ClipboardIcon className="w-10 h-10 text-designSS-gold" />
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                      Clipboard Éphémère
+                    </h3>
+                  </div>
+                  <p className="text-sm sm:text-base text-designSS-silver font-light leading-relaxed">
+                    Partagez du texte et des fichiers entre appareils avec un code unique. Suppression manuelle ou automatique après 24h.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4 text-designSS-gold group-hover:gap-3 transition-all duration-300">
+                    <span className="text-sm font-medium">Accéder</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-designSS-gold/0 via-designSS-gold/10 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </Link>
+            </motion.div>
           </div>
         </motion.section>
 
