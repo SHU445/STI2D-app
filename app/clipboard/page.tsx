@@ -299,7 +299,7 @@ export default function ClipboardPage() {
             Clipboard <span className="text-designSS-gold">Éphémère</span>
           </h1>
           <p className="text-designSS-silver text-sm sm:text-base mt-2 font-light">
-            Partagez du texte et des fichiers entre appareils
+            Partagez de données entre appareils
           </p>
         </div>
       </motion.header>

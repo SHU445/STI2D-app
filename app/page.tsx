@@ -225,7 +225,7 @@ export default function Home() {
                     </h3>
                   </div>
                   <p className="text-sm sm:text-base text-designSS-silver font-light leading-relaxed">
-                    Partagez du texte et des fichiers entre appareils avec un code unique. Suppression manuelle ou automatique après 24h.
+                    Partagez de données entre appareils avec code unique. Suppression manuelle/automatique après 24h
                   </p>
                   <div className="flex items-center gap-2 mt-4 text-designSS-gold group-hover:gap-3 transition-all duration-300">
                     <span className="text-sm font-medium">Accéder</span>
