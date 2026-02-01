@@ -200,7 +200,7 @@ export const ClipboardIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) =>
 )
 
 /**
- * IcÃ´ne de tÃ©lÃ©chargement - UtilisÃ©e pour tÃ©lÃ©charger des fichiers
+ * Icône de téléchargement - Utilisée pour télécharger des fichiers
  */
 export const DownloadIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -220,7 +220,7 @@ export const DownloadIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => 
 )
 
 /**
- * IcÃ´ne de tÃ©lÃ©versement - UtilisÃ©e pour uploader des fichiers
+ * Icône de téléversement - Utilisée pour uploader des fichiers
  */
 export const UploadIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -240,7 +240,7 @@ export const UploadIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
 )
 
 /**
- * IcÃ´ne de corbeille - UtilisÃ©e pour supprimer des Ã©lÃ©ments
+ * Icône de corbeille - Utilisée pour supprimer des éléments
  */
 export const TrashIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -260,7 +260,7 @@ export const TrashIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
 )
 
 /**
- * IcÃ´ne de copie - UtilisÃ©e pour copier dans le presse-papier
+ * Icône de copie - Utilisée pour copier dans le presse-papier
  */
 export const CopyIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -280,7 +280,7 @@ export const CopyIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
 )
 
 /**
- * IcÃ´ne de check - UtilisÃ©e pour confirmer une action
+ * Icône de check - Utilisée pour confirmer une action
  */
 export const CheckIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -300,7 +300,7 @@ export const CheckIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
 )
 
 /**
- * IcÃ´ne de fichier - UtilisÃ©e pour reprÃ©senter un fichier gÃ©nÃ©rique
+ * Icône de fichier - Utilisée pour représenter un fichier générique
  */
 export const FileIcon: React.FC<IconProps> = ({ className = "w-5 h-5" }) => (
   <svg

@@ -78,9 +78,14 @@ const projects: Project[] = [
     description: 'Outil de gestion et calcul de notes'
   },
   {
-    title: 'Ryse Portfolio',
-    url: 'https://ryse-portfolio.vercel.app',
-    description: 'Portfolio professionnel moderne'
+    title: 'Personal Pronote',
+    url: 'https://personal-pronote.vercel.app/',
+    description: 'Personal Pronote'
+  },
+  {
+    title: 'CSS Toolbox',
+    url: 'https://css-toolbox-gamma.vercel.app/',
+    description: 'CSS design tool'
   },
 ]
 
