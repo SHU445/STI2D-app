@@ -83,6 +83,11 @@ const projects: Project[] = [
     description: 'Personal Pronote'
   },
   {
+    title: 'Planner Way',
+    url: 'https://planner-way.vercel.app',
+    description: 'Planner Way'
+  },
+  {
     title: 'CSS Toolbox',
     url: 'https://css-toolbox-gamma.vercel.app/',
     description: 'CSS design tool'
