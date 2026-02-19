@@ -53,6 +53,7 @@ const usefulLinks: UsefulLink[] = [
   //{ title: '', url: '', description: ''},
   { title: 'ZimaOS', url: 'http://zimaspace.com/', description: '[OS Linux based on Debian for simplify self-hosted with features NAS on DIY'},
   { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'},
+  { title: 'Daisy.UI', url: 'https://daisyui.com/', description: 'Faster, cleaner, easier Tailwind CSS development'},
   { title: 'UIverse', url: 'http://uiverse.io/', description: 'Open-source UI for web dev/design'},
   { title: 'Animista', url:'Animista.net', description: 'On-demand CSS animation library'},
   { title: 'Gradient Hunt', url: 'http://gradienthunt.com/', description: 'Gradient for web dev/design'},
