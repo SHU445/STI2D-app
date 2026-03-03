@@ -51,6 +51,8 @@ const usefulLinks: UsefulLink[] = [
   // Lien utile orienté ajout en plus section à part à faire.
   { title: 'Temlis', url: 'http://temlis.com/', description: 'Template for web design'},
   { title: 'Kimi', url: 'http://kimi.com/', description: 'Gen a slide or a presentation'},
+  { title: 'Shadc Studio / Components', url: 'https://shadcnstudio.com/components', description: 'Composants Shadcn'},
+  { title: 'Shadcn UI Blocks', url: 'https://www.shadcnui-blocks.com/components/accordion', description: 'Shadcn UI Blocks'},
   //{ title: '', url: '', description: ''},
   { title: 'ZimaOS', url: 'http://zimaspace.com/', description: '[OS Linux based on Debian for simplify self-hosted with features NAS on DIY'},
   { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'},
