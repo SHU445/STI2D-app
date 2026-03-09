@@ -72,16 +72,11 @@ const projects: Project[] = [
     description: 'Application de suivi d\'entraînement calisthénie'
   },
   {
-    title: 'IP Tool',
-    url: 'https://my-iptool.vercel.app/',
-    description: 'Outil pour manipulation d\'IP'
+    title: 'Concentr',
+    url: 'https://concentr-seven.vercel.app/',
+    description: 'RES cours'
   },
-  {
-    title: 'Note Solve',
-    url: 'https://note-solve.vercel.app/',
-    description: 'Outil de gestion et calcul de notes'
-  },
-  {
+  /*{
     title: 'Personal Pronote',
     url: 'https://personal-pronote.vercel.app/',
     description: 'Personal Pronote'
@@ -90,7 +85,7 @@ const projects: Project[] = [
     title: 'Planner Way',
     url: 'https://planner-way.vercel.app',
     description: 'Planner Way'
-  },
+  },*/
   {
     title: 'CSS Toolbox',
     url: 'https://css-toolbox-gamma.vercel.app/',
@@ -101,22 +96,10 @@ const projects: Project[] = [
 // Tableau - séquences 
 const sequences: Sequence[] = [
   {
-    title: 'SEQ 1 - Arduino',
-    url: '/sequences/sequence-Arduino',
-    description: 'Systèmes embarqués',
-    status: 'available'
-  },
-  {
-    title: 'SEQ 2 - HTML',
-    url: '/sequences/sequence-HTML',
-    description: 'HTML',
-    status: 'coming-soon'
-  },
-  {
-    title : 'Projet 72H',
+    title : 'Projet 72H - LoRa',
     url : '/sequences/projet_72H',
-    description : 'Idée de projet de 72H',
-    status : 'coming-soon'
+    description : 'STI2D - Projet de 72H',
+    status : 'available'
   },
 ]
 
