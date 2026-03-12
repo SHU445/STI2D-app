@@ -411,54 +411,6 @@
          </motion.section>
 
          {/* Section add */}
-         <motion.section 
-           variants={containerVariants}
-           initial="hidden"
-           animate="visible"
-           className="mb-12 sm:mb-16"
-         >
-           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
-             <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
-             <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
-             <h2 className="text-2xl sm:text-3xl font-display font-semibold">academic</h2>
-           </motion.div>
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-             {usefulLinks.map((link, index) => (
-               <motion.a
-                 key={index}
-                 variants={itemVariants}
-                 href={academic.url}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
-                 className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
-               >
-                 <div className="flex items-start justify-between">
-                   <div className="flex-1"> 
-                     <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300"> 
-                     <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
-                       {academic.title}
-                     </h3>
-                     {academic.description && (
-                       <p className="text-sm text-designSS-silver mt-2 font-light">
-                       <p className="text-sm text-designSS-silver mt-2 font-light">
-                         {academic.description}
-                       </p>
-                     )} 
-                   </div> 
-                   <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
-                   <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
-                 </div>
-                 <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-                 <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-               </motion.a>
- 
-             ))}
- 
-           </div>
- 
-         </motion.section>
- 
  
  
          {/* Section des projets personnels - Affiche les projets dans une grille avec effets hover ok */}
