@@ -36,6 +36,13 @@ interface DocLink {
   description?: string
 }
 
+// Interface - définir la structure d'un lien WEB
+interface WebLink {
+  title: string
+  url: string
+  description?: string
+}
+
 // Interface - définir la structure d'un projet
 interface Project {
   title: string
