@@ -15,6 +15,27 @@ interface UsefulLink {
   description?: string
 }
 
+// Interface - définir la structure d'un lien académique
+interface AcademicLink {
+  title: string
+  url: string
+  description?: string
+}
+
+// Interface - définir la structure d'un lien SPE
+interface SPELink {
+  title: string
+  url: string
+  description?: string
+}
+
+// Interface - définir la structure d'un lien DOC
+interface DocLink {
+  title: string
+  url: string
+  description?: string
+}
+
 // Interface - définir la structure d'un projet
 interface Project {
   title: string
@@ -30,38 +51,71 @@ interface Sequence {
   status: 'available' | 'coming-soon' // Statut 
 }
 
-// Tableau - liens utiles affichés sur la page l
-const usefulLinks: UsefulLink[] = [
-  { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
-  { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
-  { title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', description: 'Gmail' },
-  { title: 'DrawDB', url: 'https://www.drawdb.app/', description: 'DrawDB' },
-  { title: 'Neon DB', url: 'https://neon.com/', description: 'Base de données' },
-  { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
-  { title: 'MDN CSS', url: 'https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties', description: 'Référence CSS' },
-  { title: 'MDN JavaScript', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference', description: 'Référence JavaScript' },
-  { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
-  { title: 'Adobe color', url: 'https://color.adobe.com/fr/create/color-wheel', description: 'Adobe color' },
-  { title: 'Color Hunt', url: 'https://colorhunt.co/', description: 'Color Hunt' },
-  { title: 'Color Space', url: 'https://mycolor.space/', description: 'Color Space' },
+// Tableau - liens acad
+const academic : AcademicLink[] = [
   { title: 'Pronote', url: 'https://0380089r.index-education.net/pronote/eleve.html?identifiant=t7gHE7rr8j8kpQf2', description: 'Notes et emploi du temps' },
+ 
   { title: 'ENT', url: 'https://porte-oisans.ent.auvergnerhonealpes.fr/sg.do?PROC=PAGE_ACCUEIL&ACTION=VALIDER', description: 'Espace numérique' },
+
   { title: 'ELEA', url: 'https://aura-38-sud.elea.apps.education.fr/local/elea_dashboard/index.php', description: 'Plateforme pédagogique' },
+ ]
+
+ // Tableau - SPE
+ const SPE : SPELink[] =[
   { title: 'TinkerCAD', url: 'https://www.tinkercad.com/login', description: 'CAO en ligne' },
-  // Lien utile orienté ajout en plus section à part à faire.
-  { title: 'Temlis', url: 'http://temlis.com/', description: 'Template for web design'},
-  { title: 'Kimi', url: 'http://kimi.com/', description: 'Gen a slide or a presentation'},
-  { title: 'Shadc Studio / Components', url: 'https://shadcnstudio.com/components', description: 'Composants Shadcn'},
-  { title: 'Shadcn UI Blocks', url: 'https://www.shadcnui-blocks.com/components/accordion', description: 'Shadcn UI Blocks'},
-  //{ title: '', url: '', description: ''},
-  { title: 'ZimaOS', url: 'http://zimaspace.com/', description: '[OS Linux based on Debian for simplify self-hosted with features NAS on DIY'},
-  { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'},
-  { title: 'Daisy.UI', url: 'https://daisyui.com/', description: 'Faster, cleaner, easier Tailwind CSS development'},
+ ]
+
+ // tableau - DOC
+ const doc : DocLink[] = [
+  { title: 'Typescript', url: 'https://typescriptdocs.com/', description: 'Documentation Typescript' },
+
+  { title: 'TailwindCSS', url: 'https://tailwindcss-com.vercel.app/docs', description: 'Documentation TailwindCSS' },
+  
+  { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
+ 
+  { title: 'MDN CSS', url: 'https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties', description: 'Référence CSS' },
+
+  { title: 'MDN JavaScript', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference', description: 'Référence JavaScript' },
+
+  { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
+ ]
+
+ // Tableau - Color theme / WEB
+ const web : WebLink[] = [
+  { title: 'Adobe color', url: 'https://color.adobe.com/fr/create/color-wheel', description: 'Adobe color' },
+ 
+  { title: 'Color Hunt', url: 'https://colorhunt.co/', description: 'Color Hunt' },
+
+  { title: 'Color Space', url: 'https://mycolor.space/', description: 'Color Space' },
   { title: 'UIverse', url: 'http://uiverse.io/', description: 'Open-source UI for web dev/design'},
+
   { title: 'Animista', url:'Animista.net', description: 'On-demand CSS animation library'},
+
   { title: 'Gradient Hunt', url: 'http://gradienthunt.com/', description: 'Gradient for web dev/design'},
+
   { title: 'CodeMyUI', url: 'http://codemyui.com/', description: 'Web design and UI inspiration'},
-]
+
+  { title: 'Temlis', url: 'http://temlis.com/', description: 'Template for web design'},
+
+  { title: 'Kimi', url: 'http://kimi.com/', description: 'Gen a slide or a presentation'},
+ ]
+ 
+ // Tableau - liens utiles affichés sur la page l
+ 
+ const usefulLinks: Link[] = [
+ 
+   { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
+ 
+   { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
+ 
+   { title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', description: 'Gmail' },
+ 
+   { title: 'Neon DB', url: 'https://neon.com/', description: 'Base de données' },
+ 
+   { title: 'ZimaOS', url: 'http://zimaspace.com/', description: '[OS Linux based on Debian for simplify self-hosted with features NAS on DIY'},
+
+   { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'}, 
+ ]    
 
 // Tableau - projets personnels 
 // Chaque projet a un titre, une URL (vers Vercel ou autre) et une description
@@ -185,6 +239,170 @@ export default function Home() {
                     {link.description && (
                       <p className="text-sm text-designSS-silver mt-2 font-light">
                         {link.description}
+                      </p>
+                    )}
+                  </div>
+                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.section>
+        
+        {/* Section des liens académiques - Affiche tous les liens académiques dans une grille responsive */}
+        <motion.section 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12 sm:mb-16"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Académiques</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {academic.map((academic, index) => (
+              <motion.a
+                key={index}
+                variants={itemVariants}
+                href={academic.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                      {academic.title}
+                    </h3>
+                    {academic.description && (
+                      <p className="text-sm text-designSS-silver mt-2 font-light">
+                        {academic.description}
+                      </p>
+                    )}
+                  </div>
+                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Section des liens SPE - Affiche tous les liens SPE dans une grille responsive */}
+        <motion.section 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12 sm:mb-16"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">SPE</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {SPE.map((SPE, index) => (
+              <motion.a
+                key={index}
+                variants={itemVariants}
+                href={SPE.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                      {SPE.title}
+                    </h3>
+                    {SPE.description && (
+                      <p className="text-sm text-designSS-silver mt-2 font-light">
+                        {SPE.description}
+                      </p>
+                    )}
+                  </div>
+                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Section des liens DOC - Affiche tous les liens DOC dans une grille responsive */}
+        <motion.section 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12 sm:mb-16"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">DOC</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {doc.map((doc, index) => (
+              <motion.a
+                key={index}
+                variants={itemVariants}
+                href={doc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                      {doc.title}
+                    </h3>
+                    {doc.description && (
+                      <p className="text-sm text-designSS-silver mt-2 font-light">
+                        {doc.description}
+                      </p>
+                    )}
+                  </div>
+                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Section des liens WEB - Affiche tous les liens WEB dans une grille responsive */}
+        <motion.section 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12 sm:mb-16"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">WEB</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {web.map((web, index) => (
+              <motion.a
+                key={index}
+                variants={itemVariants}
+                href={web.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                      {web.title}
+                    </h3>
+                    {web.description && (
+                      <p className="text-sm text-designSS-silver mt-2 font-light">
+                        {web.description}
                       </p>
                     )}
                   </div>
