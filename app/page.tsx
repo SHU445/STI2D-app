@@ -109,7 +109,7 @@ const academic : AcademicLink[] = [
  
  // Tableau - liens utiles affichés sur la page l
  
- const usefulLinks: Link[] = [
+ const usefulLinks: UsefulLink[] = [
  
    { title: 'GitHub', url: 'https://github.com/SHU445', description: 'Mes repositories' },
  
