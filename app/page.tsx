@@ -82,8 +82,6 @@ const academic : AcademicLink[] = [
  
   { title: 'MDN CSS', url: 'https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties', description: 'Référence CSS' },
 
-  { title: 'MDN JavaScript', url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference', description: 'Référence JavaScript' },
-
   { title: 'Markdown', url: 'https://docs.framasoft.org/fr/grav/markdown.html', description: 'Référence Markdown' },
  ]
 
@@ -257,8 +255,8 @@ export default function Home() {
           </div>
         </motion.section>
         
-        {/* Section des liens académiques - Affiche tous les liens académiques dans une grille responsive */}
-        <motion.section 
+        {/* Section combinée Académiques / SPE / DOC sur une même ligne */}
+        <motion.section
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -266,117 +264,107 @@ export default function Home() {
         >
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
             <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold">Académiques</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+              Ressources académiques, SPE et DOC
+            </h2>
           </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {academic.map((academic, index) => (
-              <motion.a
-                key={index}
-                variants={itemVariants}
-                href={academic.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
-                      {academic.title}
-                    </h3>
-                    {academic.description && (
-                      <p className="text-sm text-designSS-silver mt-2 font-light">
-                        {academic.description}
-                      </p>
-                    )}
-                  </div>
-                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.section>
 
-        {/* Section des liens SPE - Affiche tous les liens SPE dans une grille responsive */}
-        <motion.section 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mb-12 sm:mb-16"
-        >
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
-            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold">SPE</h2>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {SPE.map((SPE, index) => (
-              <motion.a
-                key={index}
-                variants={itemVariants}
-                href={SPE.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
-                      {SPE.title}
-                    </h3>
-                    {SPE.description && (
-                      <p className="text-sm text-designSS-silver mt-2 font-light">
-                        {SPE.description}
-                      </p>
-                    )}
-                  </div>
-                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.section>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Colonne Académiques */}
+            <div>
+              <h3 className="text-xl font-display font-semibold mb-4">Académiques</h3>
+              <div className="space-y-4">
+                {academic.map((academic, index) => (
+                  <motion.a
+                    key={index}
+                    variants={itemVariants}
+                    href={academic.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                          {academic.title}
+                        </h4>
+                        {academic.description && (
+                          <p className="text-sm text-designSS-silver mt-2 font-light">
+                            {academic.description}
+                          </p>
+                        )}
+                      </div>
+                      <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
 
-        {/* Section des liens DOC - Affiche tous les liens DOC dans une grille responsive */}
-        <motion.section 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mb-12 sm:mb-16"
-        >
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
-            <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold">DOC</h2>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {doc.map((doc, index) => (
-              <motion.a
-                key={index}
-                variants={itemVariants}
-                href={doc.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
-                      {doc.title}
-                    </h3>
-                    {doc.description && (
-                      <p className="text-sm text-designSS-silver mt-2 font-light">
-                        {doc.description}
-                      </p>
-                    )}
-                  </div>
-                  <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
-              </motion.a>
-            ))}
+            {/* Colonne SPE */}
+            <div>
+              <h3 className="text-xl font-display font-semibold mb-4">SPE</h3>
+              <div className="space-y-4">
+                {SPE.map((spe, index) => (
+                  <motion.a
+                    key={index}
+                    variants={itemVariants}
+                    href={spe.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                          {spe.title}
+                        </h4>
+                        {spe.description && (
+                          <p className="text-sm text-designSS-silver mt-2 font-light">
+                            {spe.description}
+                          </p>
+                        )}
+                      </div>
+                      <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Colonne DOC */}
+            <div>
+              <h3 className="text-xl font-display font-semibold mb-4">DOC</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {doc.map((docItem, index) => (
+                  <motion.a
+                    key={index}
+                    variants={itemVariants}
+                    href={docItem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block bg-gradient-to-br from-designSS-darkGray to-designSS-gray border border-designSS-lightGray/20 rounded-lg p-5 sm:p-6 hover:border-designSS-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-designSS-gold/10 hover:-translate-y-1"
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-lg sm:text-xl font-semibold text-white group-hover:text-designSS-gold transition-colors duration-300">
+                          {docItem.title}
+                        </h4>
+                        {docItem.description && (
+                          <p className="text-sm text-designSS-silver mt-2 font-light">
+                            {docItem.description}
+                          </p>
+                        )}
+                      </div>
+                      <ExternalLinkIcon className="w-5 h-5 text-designSS-silver group-hover:text-designSS-gold transition-colors duration-300 flex-shrink-0 ml-2" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-designSS-gold/0 via-designSS-gold/5 to-designSS-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.section>
 
