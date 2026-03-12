@@ -74,7 +74,7 @@ const projects: Project[] = [
   {
     title: 'Concentr',
     url: 'https://concentr-seven.vercel.app/',
-    description: 'RES cours'
+    description: 'RESSOURCES cours'
   },
   /*{
     title: 'Personal Pronote',
