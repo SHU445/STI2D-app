@@ -255,12 +255,31 @@ export default function MarkdownPage() {
                 hr: ({node, ...props}) => <hr className="border-designSS-lightGray/50 my-8" {...props} />,
                 // Gestion des images : différencie les images externes (URL) et locales (Next.js Image)
                 img: ({node, src, alt, ...props}: any) => {
-                  // Image externe (commence par http/https)
+                  // Image externe (commence par http/https) : utilise Next/Image sans optimisation automatique
                   if (src?.startsWith('http')) {
-                    return <img src={src} alt={alt || ''} className="rounded-lg my-4 max-w-full" {...props} />
+                    return (
+                      <Image
+                        src={src}
+                        alt={alt || ''}
+                        width={800}
+                        height={600}
+                        className="rounded-lg my-4 max-w-full"
+                        unoptimized
+                        {...props}
+                      />
+                    )
                   }
                   // Image locale : utilise le composant Next.js Image pour l'optimisation
-                  return <Image src={src || ''} alt={alt || ''} width={800} height={600} className="rounded-lg my-4 max-w-full" {...props} />
+                  return (
+                    <Image
+                      src={src || ''}
+                      alt={alt || ''}
+                      width={800}
+                      height={600}
+                      className="rounded-lg my-4 max-w-full"
+                      {...props}
+                    />
+                  )
                 },
                 // Support des notes de bas de page (footnotes)
                 // Exemple: Texte[^1] puis [^1]: Note explicative

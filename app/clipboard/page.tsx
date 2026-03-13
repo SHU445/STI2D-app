@@ -623,7 +623,7 @@ export default function ClipboardPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 bg-designSS-gold/20 text-designSS-gold rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
-                  <span>Cliquez sur "Créer le partage" pour générer un code unique</span>
+                  <span>Cliquez sur « Créer le partage » pour générer un code unique</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-6 h-6 bg-designSS-gold/20 text-designSS-gold rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
