@@ -77,6 +77,10 @@ const academic : AcademicLink[] = [
   { title: 'Typescript', url: 'https://typescriptdocs.com/', description: 'Documentation Typescript' },
 
   { title: 'TailwindCSS', url: 'https://tailwindcss-com.vercel.app/docs', description: 'Documentation TailwindCSS' },
+
+  { title: 'Shadc Studio / Components', url: 'https://shadcnstudio.com/components', description: 'Composants Shadcn'},
+  
+  { title: 'Shadcn UI Blocks', url: 'https://www.shadcnui-blocks.com/components/accordion', description: 'Shadcn UI Blocks'}
   
   { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
  
@@ -265,7 +269,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
             <ExternalLinkIcon className="w-6 h-6 sm:w-7 sm:h-7 text-designSS-gold" />
             <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-              Ressources académiques, SPE et DOC
+              Ressources, SPE et DOC
             </h2>
           </motion.div>
 
