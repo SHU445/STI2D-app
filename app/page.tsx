@@ -79,8 +79,8 @@ const academic : AcademicLink[] = [
   { title: 'TailwindCSS', url: 'https://tailwindcss-com.vercel.app/docs', description: 'Documentation TailwindCSS' },
 
   { title: 'Shadc Studio / Components', url: 'https://shadcnstudio.com/components', description: 'Composants Shadcn'},
-  
-  { title: 'Shadcn UI Blocks', url: 'https://www.shadcnui-blocks.com/components/accordion', description: 'Shadcn UI Blocks'}
+
+  { title: 'Shadcn UI Blocks', url: 'https://www.shadcnui-blocks.com/components/accordion', description: 'Shadcn UI Blocks'},
   
   { title: 'MDN HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements', description: 'Référence HTML' },
  
