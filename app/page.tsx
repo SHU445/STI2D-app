@@ -70,6 +70,8 @@ const academic : AcademicLink[] = [
  // Tableau - SPE
  const SPE : SPELink[] =[
   { title: 'TinkerCAD', url: 'https://www.tinkercad.com/login', description: 'CAO en ligne' },
+
+  { title: 'App Inventor', url: 'https://ai2.appinventor.mit.edu/?locale=fr_FR', description: 'build android app' },
  ]
 
  // tableau - DOC
