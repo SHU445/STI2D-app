@@ -120,6 +120,8 @@ const academic : AcademicLink[] = [
    { title: 'Vercel', url: 'https://vercel.com/login', description: 'Déploiement' },
  
    { title: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', description: 'Gmail' },
+
+   { title: 'Discord', url: 'https://discord.com/login', description: 'Discord login' },
  
    { title: 'Neon DB', url: 'https://neon.com/', description: 'Base de données' },
  
