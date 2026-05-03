@@ -127,7 +127,9 @@ const academic : AcademicLink[] = [
  
    { title: 'ZimaOS', url: 'http://zimaspace.com/', description: '[OS Linux based on Debian for simplify self-hosted with features NAS on DIY'},
 
-   { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'}, 
+   { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'},
+
+   { title: 'Recent Work', url: 'https://www.recentwork.com/', description: 'A boundless, invite-only portfolio platform for creative professionals.'},
  ]    
 
 // Tableau - projets personnels 
