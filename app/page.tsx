@@ -109,6 +109,8 @@ const academic : AcademicLink[] = [
   { title: 'Temlis', url: 'http://temlis.com/', description: 'Template for web design'},
 
   { title: 'Kimi', url: 'http://kimi.com/', description: 'Gen a slide or a presentation'},
+
+  { title: 'Awwards', url: 'https://www.awwwards.com/', description: 'Best Website' },
  ]
  
  // Tableau - liens utiles affichés sur la page l
