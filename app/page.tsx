@@ -143,6 +143,11 @@ const projects: Project[] = [
     description: 'Application de suivi d\'entraînement calisthénie'
   },
   {
+    title: 'Rev Math',
+    url: 'https://rev-math.vercel.app/',
+    description: 'Application de révision BAC MATH'
+  },
+  {
     title: 'Concentr',
     url: 'https://concentr-seven.vercel.app/',
     description: 'RESSOURCES cours'
