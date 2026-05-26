@@ -153,6 +153,13 @@ const projects: Project[] = [
     url: 'https://concentr-seven.vercel.app/',
     description: 'RESSOURCES cours'
   },
+
+  {
+    title: 'Rev Math',
+    url: 'https://rev-math.vercel.app/',
+    description: 'REV BAC MATH'
+  },
+
   /*{
     title: 'Personal Pronote',
     url: 'https://personal-pronote.vercel.app/',
