@@ -110,7 +110,7 @@ const academic : AcademicLink[] = [
 
   { title: 'Kimi', url: 'http://kimi.com/', description: 'Gen a slide or a presentation'},
 
-  { title: 'Awwards', url: 'https://www.awwwards.com/', description: 'Best Website' },
+  { title: 'Recent Work', url: 'https://www.recentwork.com/', description: 'A boundless, invite-only portfolio platform for creative professionals.'},
  ]
  
  // Tableau - liens utiles affichés sur la page l
@@ -131,8 +131,9 @@ const academic : AcademicLink[] = [
 
    { title: 'Coolify', url: 'http://coolify.io/', description: 'Open-source and self-hostable alternative to Vercel, Heroku, Netfly and Railway for easily deploy'},
 
-   { title: 'Recent Work', url: 'https://www.recentwork.com/', description: 'A boundless, invite-only portfolio platform for creative professionals.'},
- ]    
+   { title: 'Awwards', url: 'https://www.awwwards.com/', description: 'Best Website' },
+
+  ]    
 
 // Tableau - projets personnels 
 // Chaque projet a un titre, une URL (vers Vercel ou autre) et une description
