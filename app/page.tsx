@@ -160,6 +160,12 @@ const projects: Project[] = [
     description: 'REV BAC MATH'
   },
 
+  {
+    title: 'REV Phys',
+    url: 'https://rev-phys.vercel.app/',
+    description: 'REV BAC Phys'
+  },
+
   /*{
     title: 'Personal Pronote',
     url: 'https://personal-pronote.vercel.app/',
