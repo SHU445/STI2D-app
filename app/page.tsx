@@ -137,6 +137,8 @@ const academic : AcademicLink[] = [
 
    {title: 'Effect App', url: 'https://effect.app/', description: 'Design and animation form an image'},
 
+   {title: 'Brand Overlay', url: 'https://brand-generator.stoyanov.works/', description: 'Tool overlay'},
+
   ]    
 
 // Tableau - projets personnels 
