@@ -139,6 +139,14 @@ const academic : AcademicLink[] = [
 
    {title: 'Brand Overlay', url: 'https://brand-generator.stoyanov.works/', description: 'Tool overlay'},
 
+   {title: 'Generative Fonts', url: 'https://www.generativefonts.xyz/', description: 'Gen Font'},
+
+   {title: 'Texture Fabrik', url: 'https://texturefabrik.com/', description: 'Textures et overlay - Download'},
+
+   {title: 'FontShare', url: 'https://www.fontshare.com/', description: 'Font for all'},
+
+   {title: 'Graphic-so', url: 'https://graphic.so/', description: 'Design Hub'},
+
   ]    
 
 // Tableau - projets personnels 
