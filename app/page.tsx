@@ -133,7 +133,9 @@ const academic : AcademicLink[] = [
 
    { title: 'Awwards', url: 'https://www.awwwards.com/', description: 'Best Website' },
 
-   {title : 'artkit', url: 'https://artkit.cc/', description: 'A collection of creative, browser-based tools for images, motion, and graphics.'},
+   {title : 'Artkit', url: 'https://artkit.cc/', description: 'A collection of creative, browser-based tools for images, motion, and graphics.'},
+
+   {title: 'Effect App', url: 'https://effect.app/', description: 'Design and animation form an image'},
 
   ]    
 
